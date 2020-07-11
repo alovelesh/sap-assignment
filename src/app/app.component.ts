@@ -8,3 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'sapient-assignment';
 }
+
+// remove vertical line from graph
+// set graph heigh
+// next and previous
+// hide
+// upvote
+// table UI
+// Responsive

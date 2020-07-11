@@ -1,0 +1,33 @@
+<div class="content">
+    <table>
+        <thead>
+            <tr>
+                <th>Comments</th>
+                <th>Vote Count</th>
+                <th>UpVote</th>
+                <th>News Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let post of posts">
+                <tr *ngIf="post.title && !post.isHide">
+                    <td>{{post.num_comments || '-'}}</td>
+                    <td>{{post.points || '-'}}</td>
+                    <td class="text-center"><a class="c-pointer" (click)="upVote(post)"> <img src="../../../assets/images/icons8-sort-up-24.png" alt=""> </a></td>
+                    <td>
+                        <span class="title">{{post.title}}</span>
+                        <a [href]="post.url" target="_blank" *ngIf="post.url"> ({{post.url}})</a>
+                        by <span class="bold">{{post.author}}</span>
+                        {{post.created_at_i*1000 | dateAgo}}
+                        [ <a class="bold c-pointer" (click)="hide(post)">hide</a> ]
+                        <p *ngIf="!post.url" [innerHTML]="post.story_text"></p>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+    <div class="footer">
+        <a href="">Previous</a>
+        <a href="">Next</a>
+    </div>
+</div>
