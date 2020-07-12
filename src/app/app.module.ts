@@ -18,7 +18,7 @@ import { DateAgoPipe } from './pipe/date-ago/date-ago.pipe';
     DateAgoPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule
   ],

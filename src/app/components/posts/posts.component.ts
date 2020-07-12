@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 /********** Services **********/
 import { ApiService } from './../../services/api/api.service';
+import { LoaderService } from './../../services/loader/loader.service';
 import { CommonService } from '../../services/common/common.service';
 /********** Models **********/
 import { IPost } from '../../services/models';
@@ -15,38 +16,42 @@ import { IPost } from '../../services/models';
 })
 export class PostsComponent implements OnInit {
 
-  showLoader = false;
   posts: IPost[] = [];
+  hitsPerPage = 20;
+  currentPage = 0;
+  maxPages = 0;
 
   constructor(
     private api: ApiService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private loaderService: LoaderService
   ) { }
 
   ngOnInit(): void {
-    this.getPosts();
+    this.getPosts(this.currentPage);
   }
 
-  getPosts() {
-    this.showLoader = true;
+  getPosts(page) {
+    this.loaderService.showLoader(true);
     this.api.search.getRemove(null, {
-      page: 0,
-      hitsPerPage: 20
+      page,
+      hitsPerPage: this.hitsPerPage
     }).pipe(
       finalize(() => {
-        this.showLoader = false;
-        console.log('Finalize method executed before "Data available" (or error thrown)');
+        this.loaderService.showLoader(false);
       })
     ).subscribe(res => {
-      this.posts = res.hits;
+      this.currentPage = res.page;
+      this.maxPages = res.nbPages - 1;
       const localData = this.commonService.getLocalPostData();
       if (Object.keys(localData).length) {
-        for (const ob of this.posts) {
+        for (const ob of res.hits) {
           if (localData[ob.objectID]) {
             Object.assign(ob, localData[ob.objectID]);
           }
         }
       }
+      this.posts = res.hits;
       this.commonService.updateGraph.next(this.posts);
     });
   }

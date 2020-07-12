@@ -6,7 +6,6 @@ import { Chart } from 'chart.js';
 import { IPost } from './../../services/models';
 /********** Services **********/
 import { CommonService } from './../../services/common/common.service';
-import { on } from 'process';
 
 @Component({
   selector: 'app-id-votes-graph',
@@ -16,6 +15,7 @@ import { on } from 'process';
 export class IdVotesGraphComponent implements OnInit {
 
   Linechart: any = [];
+  isHide = true;
 
   constructor(
     private commonService: CommonService
@@ -32,6 +32,7 @@ export class IdVotesGraphComponent implements OnInit {
       this.Linechart.data.labels = ids;
       this.Linechart.data.datasets[0].data = votes;
       this.Linechart.update();
+      this.isHide = false;
     });
   }
 

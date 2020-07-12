@@ -1,5 +1,7 @@
 export interface ISearchResponse {
     hits: IPost[];
+    page: number;
+    nbPages: number;
 }
 
 export interface IPost {

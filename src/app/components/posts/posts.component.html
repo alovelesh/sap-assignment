@@ -13,7 +13,8 @@
                 <tr *ngIf="post.title && !post.isHide">
                     <td>{{post.num_comments || '-'}}</td>
                     <td>{{post.points || '-'}}</td>
-                    <td class="text-center"><a class="c-pointer" (click)="upVote(post)"> <img src="../../../assets/images/icons8-sort-up-24.png" alt=""> </a></td>
+                    <td class="text-center"><a class="c-pointer" (click)="upVote(post)"> <img
+                                src="../../../assets/images/icons8-sort-up-24.png" alt=""> </a></td>
                     <td>
                         <span class="title">{{post.title}}</span>
                         <a [href]="post.url" target="_blank" *ngIf="post.url"> ({{post.url}})</a>
@@ -27,7 +28,7 @@
         </tbody>
     </table>
     <div class="footer">
-        <a href="">Previous</a>
-        <a href="">Next</a>
+        <a *ngIf="currentPage > 0" (click)="getPosts(currentPage - 1)">Previous</a>
+        <a *ngIf="currentPage < maxPages" (click)="getPosts(currentPage + 1)">Next</a>
     </div>
 </div>
