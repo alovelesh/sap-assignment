@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node dist/sapient-assignment/server/main.js",
+    "heroku-postbuild": "ng build --prod && ng run sapient-assignment:server:production",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

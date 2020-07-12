@@ -13,7 +13,6 @@ export function app() {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/sapient-assignment/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-  console.log(indexHtml, 'index HTML');
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine('html', ngExpressEngine({
