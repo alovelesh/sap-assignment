@@ -1,0 +1,20 @@
+<div *ngIf="user$ | async as user">
+    <table>
+        <tr>
+            <td>User:</td>
+            <td>{{user.username}}</td>
+        </tr>
+        <tr>
+            <td>Created:</td>
+            <td class="color-black">{{(user.created_at_i * 1000) | date : 'MMM d, y'}}</td>
+        </tr>
+        <tr>
+            <td>Karma:</td>
+            <td>{{user.karma}}</td>
+        </tr>
+        <tr>
+            <td>About:</td>
+            <td class="color-black">{{user.about}}</td>
+        </tr>
+    </table>
+</div>

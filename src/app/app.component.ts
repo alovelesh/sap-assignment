@@ -1,7 +1,5 @@
 /********** Angular Dependency **********/
 import { Component } from '@angular/core';
-/********** Services **********/
-import { LoaderService } from './services/loader/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -10,25 +8,20 @@ import { LoaderService } from './services/loader/loader.service';
 })
 export class AppComponent {
   title = 'sapient-assignment';
-  showLoaderImage = false;
-
-  constructor(
-    private loaderService: LoaderService
-  ) {
-    this.loaderService
-      .getLoader()
-      .subscribe((res) => (this.showLoaderImage = res));
-  }
 }
 
-// remove vertical line from graph
-// set graph heigh
-// next and previous
-// hide
-// upvote
-// table UI
-// Responsive
+// remove vertical line from graph - Done
+// set graph heigh - Done
+// next and previous - Done
+// hide - Done
+// upvote - Done
+// table UI - Done
+// Responsive - Done
 // Test cases
+// Show user detail
+// Add records on hide
+// authrization
+// Header
 
 // Steps to add Angular Universal
 // 1. ng add @nguniversal/express-engine --clientProject sapient-assignment

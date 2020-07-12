@@ -1,22 +1,12 @@
 <style>
   :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 14px;
   }
 </style>
 
 <div class="main">
-  <app-posts></app-posts>
-  <app-id-votes-graph></app-id-votes-graph>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
 </div>
-
-<div class="parentDisable" [hidden]="!showLoaderImage">
-  <div class="overlay-box">
-    <svg class="loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340">
-      <circle cx="170" cy="170" r="160" stroke="#E2007C"/>
-      <circle cx="170" cy="170" r="135" stroke="#404041"/>
-      <circle cx="170" cy="170" r="110" stroke="#E2007C"/>
-      <circle cx="170" cy="170" r="85" stroke="#404041"/>
-   </svg>
-  </div>
-</div>
+<app-loader></app-loader>

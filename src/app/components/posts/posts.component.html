@@ -18,7 +18,7 @@
                     <td>
                         <span class="title">{{post.title}}</span>
                         <a [href]="post.url" target="_blank" *ngIf="post.url"> ({{post.url}})</a>
-                        by <span class="bold">{{post.author}}</span>
+                        by <span class="bold c-pointer" [routerLink]="['/user', post.author]" >{{post.author}}</span>
                         {{post.created_at_i*1000 | dateAgo}}
                         [ <a class="bold c-pointer" (click)="hide(post)">hide</a> ]
                         <p *ngIf="!post.url" [innerHTML]="post.story_text"></p>

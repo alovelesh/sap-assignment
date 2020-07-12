@@ -15,3 +15,10 @@ export interface IPost {
     objectID: string;
     isHide?: boolean;
 }
+
+export interface IUserResponse {
+    username: string;
+    about: string;
+    karma: number;
+    created_at_i: number;
+}

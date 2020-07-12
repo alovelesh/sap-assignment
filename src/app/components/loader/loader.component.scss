@@ -1,0 +1,58 @@
+.parentDisable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    background: #666;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay-box {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(255,255,255, 0.2);
+}
+
+.loader {
+    max-width: 10rem;
+    width: 100%;
+}
+
+circle {
+    fill: none;
+    stroke-width: 3.5;
+    animation-name: preloader;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 170px 170px;
+    will-change: transform;
+}
+circle:nth-of-type(1) {
+    stroke-dasharray: 550;
+    animation-delay: -0.15s;
+}
+circle:nth-of-type(2) {
+    stroke-dasharray: 500;
+    animation-delay: -0.3s;
+}
+circle:nth-of-type(3) {
+    stroke-dasharray: 450;
+    animation-delay: -0.45s;
+}
+circle:nth-of-type(4) {
+    stroke-dasharray: 300;
+    animation-delay: -0.6s;
+}
+@-webkit-keyframes preloader {
+    50% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes preloader {
+    50% {
+        transform: rotate(360deg);
+    }
+}
