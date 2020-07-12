@@ -44,21 +44,46 @@ export class IdVotesGraphComponent implements OnInit {
         datasets: [
           {
             data: [],
-            borderColor: 'blue',
+            borderColor: '#245b89',
             backgroundColor: 'rgba(255,255,255, 0)',
           }
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        aspectRatio: 1,
+        elements: {
+          line: {
+            tension: 0
+          }
+        },
         legend: {
           display: false
         },
         scales: {
           xAxes: [{
-            display: true
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'ID',
+              fontStyle: 'bold',
+              fontSize: '16',
+              fontColor: 'black',
+            },
+            gridLines: {
+              display: false
+            }
           }],
           yAxes: [{
-            display: true
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Votes',
+              fontStyle: 'bold',
+              fontSize: '16',
+              fontColor: 'black'
+            }
           }],
         }
       }
