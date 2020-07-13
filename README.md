@@ -1,6 +1,6 @@
 # Sapient Assignment
 
-## Create hacker news using Angular and that has been completed from my end with below functionalities.
+Create hacker news using Angular and that has been completed from my end with below functionalities.
 
 1. Desktop design is provided below. Make it responsive for tablet and mobile. Apply your thoughts on what’d be the best user experience for the respective devices
 2. Upvote (maintain upvotes using in-browser storage APIs – no service integration, but keep the functionality such that it can be replaced with an service with minimal code change). You can add as many upvotes as you wish.
