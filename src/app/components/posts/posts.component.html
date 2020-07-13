@@ -1,42 +1,44 @@
 <div class="content">
-    <table>
-        <thead>
-            <tr>
-                <th>Comments</th>
-                <th>Vote Count</th>
-                <th>UpVote</th>
-                <th>News Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let post of posts">
-                <tr *ngIf="post.title && !post.isHide">
-                    <td>{{post.num_comments || '-'}}</td>
-                    <td>{{post.points || '-'}}</td>
-                    <td class="text-center">
-                        <a class="c-pointer" (click)="upVote(post)">
-                            <span class="up-vote"></span>
-                        </a>
-                    </td>
-                    <td>
-                        <span class="title">
-                            {{post.title}}
-                        </span>
-                        <a [href]="post.url" target="_blank" *ngIf="post.url">
-                            {{post.url}}
-                        </a>
-                        by
-                        <span class="bold c-pointer" [routerLink]="['/user', post.author]">
-                            {{post.author}}
-                        </span>
-                        {{post.created_at_i*1000 | dateAgo}}
-                        [ <a class="bold c-pointer" (click)="hide(post)">hide</a> ]
-                        <p *ngIf="!post.url" [innerHTML]="post.story_text"></p>
-                    </td>
+    <div class="posts">
+        <table>
+            <thead>
+                <tr>
+                    <th>Comments</th>
+                    <th>Vote Count</th>
+                    <th>UpVote</th>
+                    <th>News Details</th>
                 </tr>
-            </ng-container>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let post of posts">
+                    <tr *ngIf="post.title && !post.isHide">
+                        <td>{{post.num_comments || '-'}}</td>
+                        <td>{{post.points || '-'}}</td>
+                        <td class="text-center">
+                            <a class="c-pointer" (click)="upVote(post)">
+                                <span class="up-vote"></span>
+                            </a>
+                        </td>
+                        <td>
+                            <span class="title">
+                                {{post.title}}
+                            </span>
+                            <a [href]="post.url" target="_blank" *ngIf="post.url">
+                                {{post.url}}
+                            </a>
+                            by
+                            <span class="bold c-pointer" [routerLink]="['/user', post.author]">
+                                {{post.author}}
+                            </span>
+                            {{post.created_at_i*1000 | dateAgo}}
+                            [ <a class="bold c-pointer" (click)="hide(post)">hide</a> ]
+                            <p *ngIf="!post.url" [innerHTML]="post.story_text"></p>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
     <div class="footer">
         <a *ngIf="currentPage > 0" routerLink="" [queryParams]="{ page: currentPage - 1, hitsPerPage: hitsPerPage }">Previous</a>
         <a *ngIf="currentPage < maxPages" routerLink="" [queryParams]="{ page: currentPage + 1, hitsPerPage: hitsPerPage }" >Next</a>

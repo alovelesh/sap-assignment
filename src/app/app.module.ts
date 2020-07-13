@@ -14,6 +14,8 @@ import { IdVotesGraphComponent } from './components/id-votes-graph/id-votes-grap
 import { UserComponent } from './components/user/user.component';
 /********** Pipe **********/
 import { DateAgoPipe } from './pipe/date-ago/date-ago.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { DateAgoPipe } from './pipe/date-ago/date-ago.pipe';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

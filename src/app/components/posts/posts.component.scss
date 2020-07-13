@@ -1,6 +1,8 @@
 .content {
     border-bottom: 2px solid #fd6700;
-    overflow-x: auto;
+    .posts {
+        overflow-x: auto;
+    }
 }
 
 table {
