@@ -1,4 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Subject } from 'rxjs';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+
+import { LoaderService } from './../../services/loader/loader.service';
 
 import { LoaderComponent } from './loader.component';
 
@@ -8,7 +11,10 @@ describe('LoaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ]
+      declarations: [ LoaderComponent ],
+      providers: [
+        LoaderService
+      ]
     })
     .compileComponents();
   }));
@@ -22,4 +28,11 @@ describe('LoaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set showLoader flag', inject([LoaderService], (
+    loaderService: LoaderService
+  ) => {
+    loaderService.showLoader(true);
+    expect(component.showLoaderImage).toBe(true);
+  }));
 });

@@ -13,12 +13,22 @@
                 <tr *ngIf="post.title && !post.isHide">
                     <td>{{post.num_comments || '-'}}</td>
                     <td>{{post.points || '-'}}</td>
-                    <td class="text-center"><a class="c-pointer" (click)="upVote(post)"> <img
-                                src="../../../assets/images/icons8-sort-up-24.png" alt=""> </a></td>
+                    <td class="text-center">
+                        <a class="c-pointer" (click)="upVote(post)">
+                            <span class="up-vote"></span>
+                        </a>
+                    </td>
                     <td>
-                        <span class="title">{{post.title}}</span>
-                        <a [href]="post.url" target="_blank" *ngIf="post.url"> ({{post.url}})</a>
-                        by <span class="bold c-pointer" [routerLink]="['/user', post.author]" >{{post.author}}</span>
+                        <span class="title">
+                            {{post.title}}
+                        </span>
+                        <a [href]="post.url" target="_blank" *ngIf="post.url">
+                            {{post.url}}
+                        </a>
+                        by
+                        <span class="bold c-pointer" [routerLink]="['/user', post.author]">
+                            {{post.author}}
+                        </span>
                         {{post.created_at_i*1000 | dateAgo}}
                         [ <a class="bold c-pointer" (click)="hide(post)">hide</a> ]
                         <p *ngIf="!post.url" [innerHTML]="post.story_text"></p>
@@ -28,7 +38,7 @@
         </tbody>
     </table>
     <div class="footer">
-        <a *ngIf="currentPage > 0" (click)="getPosts(currentPage - 1)">Previous</a>
-        <a *ngIf="currentPage < maxPages" (click)="getPosts(currentPage + 1)">Next</a>
+        <a *ngIf="currentPage > 0" routerLink="" [queryParams]="{ page: currentPage - 1, hitsPerPage: hitsPerPage }">Previous</a>
+        <a *ngIf="currentPage < maxPages" routerLink="" [queryParams]="{ page: currentPage + 1, hitsPerPage: hitsPerPage }" >Next</a>
     </div>
 </div>
