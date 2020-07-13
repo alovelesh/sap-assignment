@@ -23,6 +23,7 @@ export class PostsComponent implements OnInit, OnDestroy {
   currentPage = 0;
   maxPages = 0;
   subscription: Subscription = new Subscription();
+  dataLoaded = false;
 
   constructor(
     private api: ApiService,
@@ -51,6 +52,7 @@ export class PostsComponent implements OnInit, OnDestroy {
     }).pipe(
       finalize(() => {
         this.loaderService.showLoader(false);
+        this.dataLoaded = true;
       })
     ).subscribe(res => {
       this.currentPage = res.page;
