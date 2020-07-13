@@ -50,11 +50,16 @@ export class CommonService {
   }
 
   getLocalPostData() {
-    const data = localStorage[this.localStorageKeyName];
-    if (data) {
-      return JSON.parse(data);
-    } else {
-      return {};
+    let ob = {};
+    try {
+      const data = localStorage[this.localStorageKeyName];
+      if (data) {
+        ob = JSON.parse(data);
+      }
+      return ob;
+    }
+    catch (err) {
+      return ob;
     }
   }
 

@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 /********** Routing Module **********/
 import { AppRoutingModule } from './app-routing.module';
 /********** Components **********/
@@ -30,6 +31,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    TransferHttpCacheModule,
     AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

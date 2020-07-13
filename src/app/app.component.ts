@@ -24,6 +24,3 @@ export class AppComponent {
 // Page book mark - Done
 // PWA - Done
 // Unsubscribe - Done
-
-// Steps to add Angular Universal
-// 1. ng add @nguniversal/express-engine --clientProject sapient-assignment
