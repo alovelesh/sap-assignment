@@ -1,6 +1,6 @@
 # Sapient Assignment
 
-`Problem statement` Create hacker news using Angular that cover below functionalities.
+## Create hacker news using Angular and that has been completed from my end with below functionalities.
 
 1. Desktop design is provided below. Make it responsive for tablet and mobile. Apply your thoughts on what’d be the best user experience for the respective devices
 2. Upvote (maintain upvotes using in-browser storage APIs – no service integration, but keep the functionality such that it can be replaced with an service with minimal code change). You can add as many upvotes as you wish.
@@ -13,6 +13,7 @@
 9. Add PWA functionality.
 10. Show skeleton on data loading.
 11. Show loader on API call.
+12. Automatic build pipeline is set on heroku.
 
 ## Deployment
 
