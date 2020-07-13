@@ -20,11 +20,10 @@ export class AppComponent {
 // Show user detail - Doone
 // Header - Done
 // on header click redirect to home - Done
-// Test cases
-// Add records on hide
+// Test cases - Done
 // Page book mark - Done
-// PWA
-// Unsubscribe
+// PWA - Done
+// Unsubscribe - Done
 
 // Steps to add Angular Universal
 // 1. ng add @nguniversal/express-engine --clientProject sapient-assignment

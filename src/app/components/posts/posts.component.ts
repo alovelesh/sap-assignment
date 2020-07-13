@@ -2,7 +2,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 /********** rxjs **********/
 import { Subscription } from 'rxjs';
-import { finalize } from 'rxjs/operators';
 /********** Services **********/
 import { ApiService } from './../../services/api/api.service';
 import { LoaderService } from './../../services/loader/loader.service';
@@ -49,12 +48,9 @@ export class PostsComponent implements OnInit, OnDestroy {
     this.subscription.add(this.api.search.getRemove(null, {
       page,
       hitsPerPage: this.hitsPerPage
-    }).pipe(
-      finalize(() => {
-        this.loaderService.showLoader(false);
-        this.dataLoaded = true;
-      })
-    ).subscribe(res => {
+    }).subscribe(res => {
+      this.loaderService.showLoader(false);
+      this.dataLoaded = true;
       this.currentPage = res.page;
       this.maxPages = res.nbPages - 1;
       const localData = this.commonService.getLocalPostData();
