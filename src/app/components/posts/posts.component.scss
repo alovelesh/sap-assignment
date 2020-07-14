@@ -36,12 +36,9 @@ a {
     text-decoration: none;
 }
 
-.up-vote {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 3px 2px 6px;
-    background: url(../../../assets/images/gray-arrow.gif) no-repeat;
+.up-vote:after {
+    content: '\25B2';
+    color: #9a9a9a;
 }
 
 .text-center {
