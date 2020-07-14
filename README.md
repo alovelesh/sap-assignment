@@ -1,27 +1,34 @@
-# SapientAssignment
+# Sapient Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0-rc.0.
+Create hacker news using Angular and that has been completed from my end with below functionalities.
 
-## Development server
+1. Desktop design is provided below. Make it responsive for tablet and mobile. Apply your thoughts on what’d be the best user experience for the respective devices
+2. Upvote (maintain upvotes using in-browser storage APIs – no service integration, but keep the functionality such that it can be replaced with an service with minimal code change). You can add as many upvotes as you wish.
+3. Hide functionality to remove the news from user’s view.
+4. Prev | Next link should get the relevant data and all paginated URL's should be bookmarkable.
+5. Plot the timeline with the News ID as the x axis and votes on the Y axis. This will match the data in the details table above it. 
+6. The timeline chart should update real time as and when the upvote is clicked.
+7. ALL MODIFIED DATA like hide and Upvotes – should be persisted and should not reset on browser refresh.
+8. Use Angular universal for server side rendering.
+9. Add PWA functionality.
+10. Show skeleton on data loading.
+11. Show loader on API call.
+12. Automatic build pipeline is set on heroku.
+13. On clicking of user, It will redirect to user detail page.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Deployment
 
-## Code scaffolding
+Navigate to `https://sap-assignment.herokuapp.com` or [click](https://sap-assignment.herokuapp.com) here.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Deploy on local
 
-## Build
+1. clone `https://github.com/alovelesh/sap-assignment.git` into your local repository.
+2. go to your project directory `cd sap-assignment`.
+3. Install all dependencies `npm install`
+4. Run `npm run build:ssr && npm run serve:ssr` command.
+5. open `http://localhost:4000/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
-
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
