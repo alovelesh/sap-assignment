@@ -24,10 +24,10 @@ export class Api<T> {
         rp: Params = {},
         method: 'get' | 'delete' = 'get'
     ): Observable<T> {
-        this.actionUrl = this.createRouteURL(rp);
+        const routeUrl = this.createRouteURL(rp);
         const params = this.correctFormatForQueryUrl(qp);
         return this.http[method]<T>(
-            `${this.actionUrl}${id ? '/' + id : ''}`, {
+            `${routeUrl}${id ? '/' + id : ''}`, {
             params
         });
     }
@@ -43,10 +43,10 @@ export class Api<T> {
         rp?: Params,
         method: 'post' | 'patch' = 'post'
     ): Observable<T> {
-        this.actionUrl = this.createRouteURL(rp);
+        const routeUrl = this.createRouteURL(rp);
         const params = this.correctFormatForQueryUrl(qp);
         return this.http[method]<T>(
-            `${this.actionUrl}${id ? '/' + id : ''}`,
+            `${routeUrl}${id ? '/' + id : ''}`,
             data,
             {
                 params
