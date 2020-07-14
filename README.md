@@ -14,6 +14,7 @@ Create hacker news using Angular and that has been completed from my end with be
 10. Show skeleton on data loading.
 11. Show loader on API call.
 12. Automatic build pipeline is set on heroku.
+13. On clicking of user, It will redirect to user detail page.
 
 ## Deployment
 
