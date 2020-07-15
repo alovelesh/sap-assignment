@@ -19,11 +19,11 @@
                             </a>
                         </td>
                         <td>
-                            <span class="title">
-                                {{post.title}}
+                            <span class="title c-pointer" [routerLink]="['/item', post.objectID]">
+                                {{post.title}} 
                             </span>
                             <a [href]="post.url" target="_blank" *ngIf="post.url">
-                                {{post.url}}
+                                ({{post.url}})
                             </a>
                             by
                             <span class="bold c-pointer" [routerLink]="['/user', post.author]">

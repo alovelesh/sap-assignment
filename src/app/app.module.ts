@@ -13,6 +13,7 @@ import { PostsWithGraphComponent } from './components/posts-with-graph/posts-wit
 import { PostsComponent } from './components/posts/posts.component';
 import { IdVotesGraphComponent } from './components/id-votes-graph/id-votes-graph.component';
 import { UserComponent } from './components/user/user.component';
+import { ItemComponent } from './components/item/item.component';
 /********** Pipe **********/
 import { DateAgoPipe } from './pipe/date-ago/date-ago.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -27,6 +28,7 @@ import { environment } from '../environments/environment';
     PostsComponent,
     IdVotesGraphComponent,
     UserComponent,
+    ItemComponent,
     DateAgoPipe
   ],
   imports: [

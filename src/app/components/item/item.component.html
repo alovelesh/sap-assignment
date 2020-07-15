@@ -1,0 +1,28 @@
+<div class="item" *ngIf="item">
+    <div class="user mb-25">
+        <div class="up-vote"></div>
+        <div class="detail">
+            <span>{{item.title}} </span>
+            <a href="">({{item.url}})</a>
+            <div class="small">
+                {{item.points}} points by {{item.author}} on {{item.created_at_i*1000 | date:'MMM d, y'}}
+            </div>
+        </div>
+    </div>
+    <ng-container [ngTemplateOutlet]="children" [ngTemplateOutletContext]="{childrens: item.children}"></ng-container>
+</div>
+
+<ng-template let-childrens="childrens" #children>
+    <div class="story">
+        <ng-container *ngFor="let child of childrens">
+            <div *ngIf="child.text" class="user">
+                <div class="up-vote"></div>
+                <div class="detail">
+                    <span>{{child.author}} on {{child.created_at_i*1000 | date:'MMM d, y'}}</span>
+                    <div class="small" [innerHTML]="child.text"></div>
+                </div>
+            </div>
+            <ng-container *ngIf="child.children.length" [ngTemplateOutlet]="children" [ngTemplateOutletContext]="{childrens: child.children}"></ng-container>
+        </ng-container>
+    </div>
+</ng-template>

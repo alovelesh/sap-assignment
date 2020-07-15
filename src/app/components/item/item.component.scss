@@ -1,0 +1,45 @@
+.mb-25 {
+    margin-bottom: 25px;
+}
+.item {
+    padding: 10px 0 0 5px;
+    color: gray;
+    overflow-x: auto;
+}
+.user {
+    display: flex;
+    .detail {
+        margin: 2px 0 0 5px;
+    }
+    margin-bottom: 5px;
+}
+.up-vote:after {
+    content: '\25B2';
+    color: #9a9a9a;
+    cursor: pointer;
+}
+
+.small {
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+.story {
+    margin-left: 10px;
+    @media screen and (max-width: 500px) {
+        margin-left: 5px;
+    }
+}
+// .small {
+//     p {
+//         margin-block-start: 0em;
+//         margin-block-end: 0em;
+//     }
+// }
+// pre {
+//     white-space: pre-wrap;
+// }
+// a {
+//     display: block;
+//     width: 100%;
+// }

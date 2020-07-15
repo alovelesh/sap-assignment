@@ -17,4 +17,5 @@ export class ApiService {
 
   search = new Api<ISearchResponse>(this.http, this.apiUrl + '/search');
   users = new Api<IUserResponse>(this.http, this.apiUrl + '/users/:user');
+  items = new Api<IUserResponse>(this.http, this.apiUrl + '/items/:id');
 }
